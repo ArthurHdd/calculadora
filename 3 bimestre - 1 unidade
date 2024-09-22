@@ -1,0 +1,77 @@
+calculadora-simples/
+├── src/
+│   └── calculadora.py
+├── tests/
+│   └── test_calculadora.py
+├── README.md
+└── requirements.txt
+def adicionar(a, b):
+    return a + b
+
+def subtrair(a, b):
+    return a - b
+
+def multiplicar(a, b):
+    return a * b
+
+def dividir(a, b):
+    if b == 0:
+        raise ValueError("Divisão por zero não é permitida.")
+    return a / b
+
+if __name__ == "__main__":
+    print("Bem-vindo à calculadora!")
+    a = float(input("Digite o primeiro número: "))
+    b = float(input("Digite o segundo número: "))
+    operacao = input("Escolha a operação (+, -, *, /): ")
+
+    if operacao == "+":
+        print(f"Resultado: {adicionar(a, b)}")
+    elif operacao == "-":
+        print(f"Resultado: {subtrair(a, b)}")
+    elif operacao == "*":
+        print(f"Resultado: {multiplicar(a, b)}")
+    elif operacao == "/":
+        print(f"Resultado: {dividir(a, b)}")
+    else:
+        print("Operação inválida.")
+import unittest
+from src.calculadora import adicionar, subtrair, multiplicar, dividir
+
+class TestCalculadora(unittest.TestCase):
+
+    def test_adicionar(self):
+        self.assertEqual(adicionar(2, 3), 5)
+
+    def test_subtrair(self):
+        self.assertEqual(subtrair(5, 2), 3)
+
+    def test_multiplicar(self):
+        self.assertEqual(multiplicar(3, 4), 12)
+
+    def test_dividir(self):
+        self.assertEqual(dividir(10, 2), 5)
+        with self.assertRaises(ValueError):
+            dividir(10, 0)unittest2
+
+
+if __name__ == "__main__":
+    unittest.main()
+# Calculadora Simples
+
+Este é um projeto de uma calculadora simples em Python, que realiza operações básicas como adição, subtração, multiplicação e divisão.
+
+## Como usar
+
+1. Clone o repositório:
+2. Navegue até a pasta do projeto:
+3. Execute a calculadora:
+
+## Testes
+
+Para rodar os testes, use:
+
+## Licença
+
+Este projeto está licenciado sob a MIT License.
+unittest2
